@@ -14,7 +14,9 @@ class Main extends PluginBase implements Listener{
     $this->getServer()->getPluginManager()->registerEvents($this, $this);
   }
   public function onCommand(Command $command, CommandSender $sender, $label, Array $args){
-    $x= $sender->getX();
+    switch($command->getName()){    	
+      case "loadscreen":
+        $x= $sender->getX();
     $y= $sender->getY();
     $z= $sender->getZ();
     $pk = new ChangeDimensionPacket();
@@ -32,5 +34,6 @@ class Main extends PluginBase implements Listener{
     if($args[0]=="message"){
       $player->sendMessage("[LoadScreen] Showed the loading screen");
     }
+        break;
   } 
 }

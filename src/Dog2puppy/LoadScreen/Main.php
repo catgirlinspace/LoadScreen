@@ -26,13 +26,13 @@ class Main extends PluginBase implements Listener
        $pk->x = (int) $x; //define X
        $pk->y = (int) $y; //define Y
        $pk->z = (int) $z; //define Z
-       $player->dataPacket($pk); //$player must be an instance of a pocketmine/Player
+       $sender->dataPacket($pk); //$player must be an instance of a pocketmine/Player
        $pk = new ChangeDimensionPacket();
             $pk->dimension = 0; //1 is the nether; 0 is the overworld
        $pk->x = (int) $x; //define X
        $pk->y = (int) $y; //define Y
        $pk->z = (int) $z; //define Z
-       $player->dataPacket($pk); //$player must be an instance of a pocketmine/Player
+       $sender->dataPacket($pk); //$player must be an instance of a pocketmine/Player
        if ($args[0] == 'message') {
            $player->sendMessage('[LoadScreen] Showed the loading screen');
        }
